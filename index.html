@@ -1,183 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
-</head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ja"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1">&lt;title&gt;ヨガサロン専用 腸活診断&lt;/title&gt;</p>
-<p class="p1">&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;style&gt;</p>
-<p class="p1">body {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-family: "Hiragino Kaku Gothic ProN", sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #f3f7f5;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px;</p>
-<p class="p1">}</p>
-<p class="p1">.container {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin: auto;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 4px 10px rgba(0,0,0,0.1);</p>
-<p class="p1">}</p>
-<p class="p1">h1 {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color: #3a6f5a;</p>
-<p class="p1">}</p>
-<p class="p1">label {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>display:block;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top:15px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-weight:bold;</p>
-<p class="p1">}</p>
-<p class="p1">select {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top:5px;</p>
-<p class="p1">}</p>
-<p class="p1">button {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top:25px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:12px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#3a6f5a;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>color:white;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border:none;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:8px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>font-size:16px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>cursor:pointer;</p>
-<p class="p1">}</p>
-<p class="p1">.result {</p>
-<p class="p1"><span class="Apple-converted-space">  </span>margin-top:30px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>padding:20px;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>background:#f0faf6;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>border-radius:10px;</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1">&lt;div class="container"&gt;</p>
-<p class="p1">&lt;h1&gt;🌿 腸活カウンセリング診断&lt;/h1&gt;</p>
-<p class="p1">&lt;p&gt;当てはまるものを選んでください&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;label&gt;① 便通の頻度&lt;/label&gt;</p>
-<p class="p1">&lt;select id="bowel"&gt;</p>
-<p class="p1">&lt;option value="5"&gt;毎日&lt;/option&gt;</p>
-<p class="p1">&lt;option value="3"&gt;2〜3日に1回&lt;/option&gt;</p>
-<p class="p1">&lt;option value="1"&gt;便秘気味&lt;/option&gt;</p>
-<p class="p1">&lt;/select&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;label&gt;② お腹の張り&lt;/label&gt;</p>
-<p class="p1">&lt;select id="bloating"&gt;</p>
-<p class="p1">&lt;option value="5"&gt;ほとんどない&lt;/option&gt;</p>
-<p class="p1">&lt;option value="3"&gt;時々ある&lt;/option&gt;</p>
-<p class="p1">&lt;option value="1"&gt;よくある&lt;/option&gt;</p>
-<p class="p1">&lt;/select&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;label&gt;③ 発酵食品の摂取&lt;/label&gt;</p>
-<p class="p1">&lt;select id="food"&gt;</p>
-<p class="p1">&lt;option value="5"&gt;毎日&lt;/option&gt;</p>
-<p class="p1">&lt;option value="3"&gt;週数回&lt;/option&gt;</p>
-<p class="p1">&lt;option value="1"&gt;ほとんど食べない&lt;/option&gt;</p>
-<p class="p1">&lt;/select&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;label&gt;④ 睡眠の質&lt;/label&gt;</p>
-<p class="p1">&lt;select id="sleep"&gt;</p>
-<p class="p1">&lt;option value="5"&gt;良い&lt;/option&gt;</p>
-<p class="p1">&lt;option value="3"&gt;普通&lt;/option&gt;</p>
-<p class="p1">&lt;option value="1"&gt;悪い&lt;/option&gt;</p>
-<p class="p1">&lt;/select&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;label&gt;⑤ ストレスレベル&lt;/label&gt;</p>
-<p class="p1">&lt;select id="stress"&gt;</p>
-<p class="p1">&lt;option value="1"&gt;高い&lt;/option&gt;</p>
-<p class="p1">&lt;option value="3"&gt;普通&lt;/option&gt;</p>
-<p class="p1">&lt;option value="5"&gt;低い&lt;/option&gt;</p>
-<p class="p1">&lt;/select&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;label&gt;⑥ 冷え・むくみ&lt;/label&gt;</p>
-<p class="p1">&lt;select id="cold"&gt;</p>
-<p class="p1">&lt;option value="1"&gt;強い&lt;/option&gt;</p>
-<p class="p1">&lt;option value="3"&gt;少しある&lt;/option&gt;</p>
-<p class="p1">&lt;option value="5"&gt;ほとんどない&lt;/option&gt;</p>
-<p class="p1">&lt;/select&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;button onclick="diagnose()"&gt;診断する&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="output"&gt;&lt;/div&gt;</p>
-<p class="p1">&lt;canvas id="chart" style="margin-top:30px;"&gt;&lt;/canvas&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1">function diagnose(){</p>
-<p class="p1">let bowel = +document.getElementById("bowel").value;</p>
-<p class="p1">let bloating = +document.getElementById("bloating").value;</p>
-<p class="p1">let food = +document.getElementById("food").value;</p>
-<p class="p1">let sleep = +document.getElementById("sleep").value;</p>
-<p class="p1">let stress = +document.getElementById("stress").value;</p>
-<p class="p1">let cold = +document.getElementById("cold").value;</p>
-<p class="p2"><br></p>
-<p class="p1">let total = bowel + bloating + food + sleep + stress + cold;</p>
-<p class="p1">let score = Math.round(total / 30 * 100);</p>
-<p class="p2"><br></p>
-<p class="p1">let type = "";</p>
-<p class="p1">let advice = "";</p>
-<p class="p2"><br></p>
-<p class="p1">if(score &lt; 40){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>type = "❄️ 冷え・腸停滞タイプ";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>advice = "腸の動きが低下し、血流不足の可能性があります。腹部を温めるヨガやツイストポーズ、白湯習慣を取り入れましょう。";</p>
-<p class="p1">}</p>
-<p class="p1">else if(score &lt; 70){</p>
-<p class="p1"><span class="Apple-converted-space">  </span>type = "🌙 自律神経乱れタイプ";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>advice = "ストレスや睡眠の質が腸に影響している可能性があります。深い呼吸・リラックス系ヨガ・腸もみセルフケアがおすすめです。";</p>
-<p class="p1">}</p>
-<p class="p1">else{</p>
-<p class="p1"><span class="Apple-converted-space">  </span>type = "🌿 バランス良好タイプ";</p>
-<p class="p1"><span class="Apple-converted-space">  </span>advice = "腸内環境は比較的良好です。今の生活を維持しつつ、定期的なメンテナンスヨガでさらに安定させましょう。";</p>
-<p class="p1">}</p>
-<p class="p2"><br></p>
-<p class="p1">document.getElementById("output").innerHTML =</p>
-<p class="p1">"&lt;div class='result'&gt;" +</p>
-<p class="p1">"&lt;h2&gt;診断結果&lt;/h2&gt;" +</p>
-<p class="p1">"&lt;p&gt;&lt;strong&gt;腸活スコア：&lt;/strong&gt;" + score + "点&lt;/p&gt;" +</p>
-<p class="p1">"&lt;p&gt;&lt;strong&gt;タイプ：&lt;/strong&gt;" + type + "&lt;/p&gt;" +</p>
-<p class="p1">"&lt;p&gt;&lt;strong&gt;アドバイス：&lt;/strong&gt;" + advice + "&lt;/p&gt;" +</p>
-<p class="p1">"&lt;/div&gt;";</p>
-<p class="p2"><br></p>
-<p class="p1">new Chart(document.getElementById("chart"), {</p>
-<p class="p1">type: 'radar',</p>
-<p class="p1">data: {</p>
-<p class="p1">labels: ["便通","張り","食事","睡眠","ストレス","巡り"],</p>
-<p class="p1">datasets: [{</p>
-<p class="p1">label: "あなたの状態",</p>
-<p class="p1">data: [bowel, bloating, food, sleep, stress, cold]</p>
-<p class="p1">}]</p>
-<p class="p1">},</p>
-<p class="p1">options: {</p>
-<p class="p1">scales: {</p>
-<p class="p1">r: {</p>
-<p class="p1">min: 0,</p>
-<p class="p1">max: 5</p>
-<p class="p1">}</p>
-<p class="p1">}</p>
-<p class="p1">}</p>
-<p class="p1">});</p>
-<p class="p1">}</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
-</body>
-</html>
+<script>
+let chartInstance = null;
+
+function diagnose(){
+let bowel = +document.getElementById("bowel").value;
+let bloating = +document.getElementById("bloating").value;
+let food = +document.getElementById("food").value;
+let sleep = +document.getElementById("sleep").value;
+let stress = +document.getElementById("stress").value;
+let cold = +document.getElementById("cold").value;
+
+let total = bowel + bloating + food + sleep + stress + cold;
+let score = Math.round(total / 30 * 100);
+
+let type = "";
+let advice = "";
+
+if(score < 40){
+  type = "❄️ 冷え・腸停滞タイプ";
+  advice = "腸の動きが低下しています。温めるヨガやツイストポーズがおすすめです。";
+}
+else if(score < 70){
+  type = "🌙 自律神経乱れタイプ";
+  advice = "ストレスや睡眠が影響しています。呼吸法やリラックスヨガを取り入れましょう。";
+}
+else{
+  type = "🌿 バランス良好タイプ";
+  advice = "腸内環境は良好です。今の生活を維持しましょう。";
+}
+
+document.getElementById("output").innerHTML =
+"<div class='result'>" +
+"<h2>診断結果</h2>" +
+"<p><strong>腸活スコア：</strong>" + score + "点</p>" +
+"<p><strong>タイプ：</strong>" + type + "</p>" +
+"<p><strong>アドバイス：</strong>" + advice + "</p>" +
+"</div>";
+
+const ctx = document.getElementById("chart");
+
+if(chartInstance){
+  chartInstance.destroy();
+}
+
+chartInstance = new Chart(ctx, {
+type: 'radar',
+data: {
+labels: ["便通","張り","食事","睡眠","ストレス","巡り"],
+datasets: [{
+label: "あなたの状態",
+data: [bowel, bloating, food, sleep, stress, cold]
+}]
+},
+options: {
+scales: {
+r: {
+min: 0,
+max: 5
+}
+}
+}
+});
+}
+</script>
