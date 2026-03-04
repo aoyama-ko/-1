@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>腸活診断</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{font-family:sans-serif;background:#f3f7f5;padding:20px;}
+.container{max-width:700px;margin:auto;background:#fff;padding:20px;border-radius:10px;}
+label{display:block;margin-top:15px;font-weight:bold;}
+select{width:100%;padding:8px;margin-top:5px;}
+button{margin-top:20px;padding:10px;width:100%;background:#3a6f5a;color:#fff;border:none;border-radius:5px;}
+.result{margin-top:20px;padding:15px;background:#f0faf6;border-radius:8px;}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🌿 腸活診断</h1>
+
+<label>便通</label>
+<select id="bowel">
+<option value="5">毎日</option>
+<option value="3">2〜3日に1回</option>
+<option value="1">便秘気味</option>
+</select>
+
+<label>睡眠</label>
+<select id="sleep">
+<option value="5">良い</option>
+<option value="3">普通</option>
+<option value="1">悪い</option>
+</select>
+
+<label>ストレス</label>
+<select id="stress">
+<option value="1">高い</option>
+<option value="3">普通</option>
+<option value="5">低い</option>
+</select>
+
+<button onclick="diagnose()">診断する</button>
+
+<div id="output"></div>
+<canvas id="chart"></canvas>
+
+</div>
+
+<script>
+let chart;
+
+function diagnose(){
+let bowel = +document.getElementById("bowel").value;
+let sleep = +document.getElementById("sleep").value;
+let stress = +document.getElementById("stress").value;
+
+let total = bowel + sleep + stress;
+let score = Math.round(total / 15 * 100);
+
+let result = "腸活スコア：" + score + "点";
+
+document.getElementById("output").innerHTML =
+"<div class='result'>" + result + "</div>";
+
+if(chart){ chart.destroy(); }
+
+chart = new Chart(document.getElementById("chart"), {
+type: 'radar',
+data: {
+labels:["便通","睡眠","ストレス"],
+datasets:[{
+label:"あなたの状態",
+data:[bowel,sleep,stress]
+}]
+},
+options:{
+scales:{ r:{ min:0, max:5 } }
+}
+});
+}
+</script>
+
+</body>
+</html>
